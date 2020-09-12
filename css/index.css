@@ -1,0 +1,356 @@
+/*
+    File: index.css
+    MIT Licensed - see http://opensource.org/licenses/MIT for details.
+    Refer to downing.io
+    Created: August 15th, 2020.
+    This file contains CSS classes / IDs used to override the Creative Bootstrap Theme
+*/
+
+.text-small {
+  font-size: 100%;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+/* Making the "text-muted" class smaller, seems a bit too large. */
+.text-muted {
+  font-size: 97%;
+}
+
+.section-heading h1{margin-bottom:10px}.section-heading p{font-weight:400;font-size:1.1rem;color:#b2b2b2}
+
+/* Removing the bottom margin in the Languages and Skills area */
+#about > div > div:nth-child(2) > div:nth-child(3) > p.text-faded.no-margin {
+    margin-bottom: 0;
+}
+#about > div > div:nth-child(2) > div:nth-child(4) > p.text-faded.no-margin {
+  margin-bottom: 0;
+}
+
+/*  For the GitHub Section link
+    https://stackoverflow.com/questions/9586596/control-underline-position-on-text-decoration-underline
+    https://www.w3schools.com/css/css_link.asp
+    https://www.w3schools.com/css/tryit.asp?filename=trycss_link2
+*/
+ul.ul-interests li{font-size:0.9rem}
+ul.ul-edu{list-style:none}ul.ul-edu li{position:relative;padding:0px 15px 4px 3px}ul.ul-edu li .description p{margin:0}ul.ul-edu li .description p.course{font-size:0.9rem}ul.ul-edu li .description p.institution{font-size:0.75rem;color:rgba(0,0,0,0.6)}
+.btn-toolbar{display:flex;flex-wrap:wrap;justify-content:flex-start}
+.btn-toolbar .input-group{width:auto}.btn-group>.btn:not(:first-child),.btn-group>.btn-group:not(:first-child){margin-left:-1px}.btn-group>.btn:not(:last-child):not(.dropdown-toggle),.btn-group>.btn-group:not(:last-child)>
+.grid-widget-simple li{margin-bottom:1rem}
+.grid-widget-simple li:last-of-type{margin-bottom:0}
+.grid-widget-simple .project-title{margin-bottom:6px}
+.grid-widget-simple .project-summary{font-size:0.9rem;margin-bottom:0.4rem}
+.grid-container{display:block;position:relative;overflow:hidden}
+.grid-toolbar{margin-bottom:2rem}
+.grid-card{position:relative;width:calc(33.3% - 2*20px);margin:10px}@media screen and (max-width: 1199px){.grid-card{width:calc(50% - 20px)}}@media screen and (max-width: 768px){.grid-card{width:100%}
+/* .grid-item{margin-bottom:10px} */
+.grid-card.grid-item{margin:10px 10px 10px 10px}
+.grid-card .card{margin:10px}
+.grid-showcase .grid-item{margin-bottom:3rem}
+.card.course{margin-bottom:1rem}
+.card.course:last-of-type{margin-bottom:0}
+.card-text:last-child{margin-bottom:0}
+.course .card-subtitle a{border-bottom:solid 1px transparent}
+.course .card-subtitle a:hover{border-bottom:solid 1px;text-decoration:none}
+
+.grid-item{
+	float: left;
+	width: 100%;
+	height:auto;
+	border: solid 10px transparent;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:10px;
+}
+
+.featurette{font-size:0.8rem;line-height:1.5;color:#555;text-align:center}
+.featurette h3{margin-top:0;margin-bottom:5px;font-weight:400;color:#333}
+.dark .featurette,.dark .featurette h3{color:#fff}
+.featurette-icon{display:block;width:100%;color:#b73232;font-size:3rem;text-align:center}
+
+/*update all blue to orange #f05f40*/
+.text-orange {
+  color: #f05f40;
+  border-bottom: 1px solid currentColor;
+}
+
+.text-white-link {
+  color: white;
+  border-bottom: 1px solid currentColor;
+}
+
+/* Link color when it is unvisited */
+a.text-blue:link  {
+  color: #f05f40;
+  border-bottom: 1px solid currentColor;
+}
+a.text-white-link:link  {
+  color: white;
+  border-bottom: 1px solid currentColor;
+}
+
+/* Link color after being clicked on and visited */
+a.text-blue:visited {
+  color: #f05f40;
+  border-bottom: 1px solid currentColor;
+}
+a.text-white-link:visited {
+  color: white;
+  border-bottom: 1px solid currentColor;
+}
+
+/* Link color while being hovered on */
+a.text-blue:hover {
+  color: #f05f40;
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
+}
+a.text-white-link:hover {
+  color: #f05f40;
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
+}
+
+/* Link color the moment it is clicked */
+a.text-blue:active {
+  color: #f05f40;
+  border-bottom: 1px solid currentColor;
+}
+a.text-white-link:active {
+  color: white;
+  border-bottom: 1px solid currentColor;
+}
+
+.min-padding {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.min-padding-top {
+  padding-top: 2em;
+  padding-bottom: 0em;
+}
+
+.div-padding-fix {
+  padding-bottom: 2em;
+}
+
+/* Black button to go with the Spotify Green. The active/focus/etc stuff is for when you
+   hover / click on the button. */
+.btn-black {
+	color: #fff;
+	background-color: #000000 !important;
+}
+.btn-black:active, .btn-black:focus, .btn-black:hover {
+	color: #fff;
+	background-color: #262626 !important;
+}
+.btn-black:active, .btn-black:focus {
+	box-shadow:0 0 0 .2rem rgba(240,95,64,.5)!important;
+}
+
+/* Black hrefs & hrs too */
+.href-black {
+	color: #000000;
+}
+.hr-black {
+	border-color: #000000;
+	color: #000000;
+}
+
+/* 	Vertically center the images on the "Fun Stuff" section
+		https://stackoverflow.com/a/37163431
+*/
+.images-vcenter {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+/* 	Add border to the images on the "Fun Stuff" section 
+		https://www.w3schools.com/csS/css3_images.asp
+*/
+.images-border {
+	border: .5em solid #000000;
+	border-radius: 3em;
+}
+
+.images-border-skiing {
+	border: .5em solid #000000;
+	border-radius: 50%;
+}
+
+/* Rtn Red Color */
+.RtnRed {
+	color: #E61231 !important;
+	font-weight: bold;
+}
+
+.md-avatar {
+  vertical-align: middle;
+  width: 30%;
+  height: 30%;
+}
+
+/*for timeline*/
+/* .timeline {
+    padding: 50px 0;
+    position: relative;
+}
+.timeline-nodes {
+        padding-bottom: 25px;
+        position: relative;
+    }
+.timeline-nodes:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.timeline h3, .timeline p {
+    padding: 5px 15px;
+} 
+.timeline h3{
+    font-weight: lighter;
+    background: #9D2235;
+}
+.timeline p, .timeline time {
+    color: #9D2235
+}
+.timeline::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    border-left: 2px dashed #9D2235;
+    height: 100%;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+.timeline-content {
+    border: 1px solid #9D2235;
+    position: relative;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 3px 25px 0px rgba(10, 55, 90, 0.2)
+}
+.timeline-nodes:nth-child(odd) h3,
+.timeline-nodes:nth-child(odd) p {
+    text-align: right;
+}
+.timeline-nodes:nth-child(odd) .timeline-date {
+    text-align: left;
+}
+ 
+.timeline-nodes:nth-child(even) .timeline-date {
+    text-align: right;
+}
+.timeline-nodes:nth-child(odd) .timeline-content::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 100%;
+    width: 0;
+    border-left: 10px solid #9D2235;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.timeline-nodes:nth-child(even) .timeline-content::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    right: 100%;
+    width: 0;
+    border-right: 10px solid #9D2235;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.timeline-image {
+    position: relative;
+    z-index: 100;
+}
+.timeline-image::before {
+    content: "";
+    width: 80px;
+    height: 80px;
+    border: 2px dashed #9D2235;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    z-index: 1;
+    
+
+}
+.timeline-image img {
+    position: relative;
+    z-index: 100;
+}
+small device style
+
+@media (max-width: 767px) {
+    .timeline-nodes:nth-child(odd) h3,
+    .timeline-nodes:nth-child(odd) p {
+    text-align: left
+}
+.timeline-nodes:nth-child(even) {
+    flex-direction: row;
+}
+    .timeline::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 4%;
+    width: 0;
+    border-left: 2px dashed #9D2235;
+    height: 100%;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+.timeline h3 {
+    font-size: 1.7rem;
+}
+.timeline p {
+    font-size: 14px;
+}
+.timeline-image {
+    position: absolute;
+    left: 0%;
+    top: 60px;
+    transform: translateX(-50%;);
+}
+.timeline-nodes:nth-child(odd) .timeline-content::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: auto;
+    right: 100%;
+    width: 0;
+    border-left: 0;
+    border-right: 10px solid #9D2235;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.timeline-nodes:nth-child(even) .timeline-content::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    right: 100%;
+    width: 0;
+    border-right: 10px solid #9D2235;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.timeline-nodes:nth-child(even) .timeline-date {
+    text-align: left;
+}
+.timeline-image::before {
+    width: 65px;
+    height: 65px;
+}
+}
+ */

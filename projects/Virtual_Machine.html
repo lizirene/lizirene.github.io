@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Virtual Machine -- Zixuan Li</title>
+  
+  <!-- Bootstrap Core CSS -->
+  <!-- 6/15/2018: Updated to the latest version of Bootstrap (4.1.1) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+  <!-- Custom Fonts -->
+  <script src="https://use.fontawesome.com/4dfd1d7bab.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+  rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="https://lizirene.github.io/css/magnific-popup.css" rel="stylesheet">
+
+  <!-- Theme CSS -->
+  <link href="https://lizirene.github.io/css/creative.min_proj.css" rel="stylesheet">
+  
+  <!-- Index CSS -->
+  <link href="https://lizirene.github.io/css/index.css" rel="stylesheet">
+  
+  <!-- Google Analytics Tracking Tag. Track how people access my site and such. -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-68657454-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+  
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+
+      <!-- Updated with latest Creative -->
+      <a class="navbar-brand js-scroll-trigger" href="https://lizirene.github.io">Home</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" 
+              data-toggle="collapse" data-target="#navbarResponsive" 
+              aria-controls="navbarResponsive" aria-expanded="false" 
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#description">Description</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#demo">Demo</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!--  Intro Section -->
+  <header class="masthead text-center text-white bg-dark d-flex">
+    <div class="container my-auto">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="text-uppercase">
+            <strong>Virtual Machine</strong>
+          </h1>
+          <hr>
+        </div>
+        <div class="col-lg-12 mx-auto">
+          <img class="img-fluid" overflow=hidden width="100%" height="auto" src="https://lizirene.github.io/img/portfolio/thumbnails/Virtual_Machine.jpg" alt="">
+        </div>
+        <br>
+        <div class="col-lg-8 mx-auto">
+          <p class="text-faded mb-5 min-padding-top">
+           This is a virtual machine for the imaginary ITP-11 computer system with the Turtle Processing
+          UnitTM. This advanced system features fifteen 32-bit registers, 1 KB of stack space, and 3-bit color
+          graphics.         
+          </p>
+          <p class="text-italic mb-5 min-padding-top">
+            A detailed implemented project coded in C++ which can work together with <a href="ProCC_Compiler.html">ProCC Compiler</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+   <!--  Description Section -->
+  <section class="min-padding-top text-center text-dark bg-light", id="description">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h3 class="text-uppercase">Description</h3>
+          <hr>
+        </div>
+        <div class="col-lg-8 mx-auto min-padding-top">
+          <h4 class="text-uppercase">What is a compiler? </h4>
+          <p class="text-italic mb-5">
+            "In computing, a virtual machine is an emulation of a computer system. 
+            Virtual machines are based on computer architectures and provide functionality of a physical computer. 
+            Their implementations may involve specialized hardware, software, or a combination.
+            -- Wikipedia" 
+          </p>
+          <p class="text-italic min-padding-top mb-5">
+            For this project, I implemented <strong>Registers/Flags</strong>, represented the <strong>stack</strong>, added a <a href="https://www.partow.net/programming/bitmap/index.html"><strong>Turtle Processing Unit</strong></a>
+            and supported <strong>exceptions</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+     <!--  Demo Section -->
+  <section class="min-padding-top text-center text-white bg-dark", id="demo">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h3 class="text-uppercase">Features and Demo</h3>
+          <hr>
+        </div>
+                
+<!--         First generating the AST -->
+        <div class="col-lg-8 mx-auto min-padding-top">
+           <h4 class="text-uppercase">First Step </h4>
+          <p class="text-faded mb-5">
+            I familiarized myself with basic operations and implemented the ParseStr template metaprogram.
+          </p>
+          <div class="row">
+            <div class="col-xs-6 col-md-6">
+              <img class="img" width="100%" height="60%" src="https://lizirene.github.io/img/portfolio/thumbnails/VM1.gif" alt="">
+            </div>
+            <div class="col-xs-6 col-md-6">
+            <img class="img" width="100%" height="60%" src="https://lizirene.github.io/img/portfolio/thumbnails/VM2.gif" alt="">
+            </div>
+          </div>
+        </div>
+<!--         next generating nodes -->
+        <div class="col-lg-8 mx-auto div-padding-fix">
+           <h4 class="text-uppercase">Next </h4>
+          <p class="text-faded mb-5">
+            I added the code for each operation and finished up the machine, including the stack, Turtle Processing Unit and exceptions.
+          </p>
+          <div class="row">
+            <div class="col-xs-6 col-md-6">
+              <img class="img" width="100%" height="50%" src="https://lizirene.github.io/img/portfolio/thumbnails/VM3.gif" alt="">
+            </div>
+            <div class="col-xs-6 col-md-6">
+            <img class="img" width="100%" height="50%" src="https://lizirene.github.io/img/portfolio/thumbnails/VM4.gif" alt="">
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <br>
+  <!--  THIS IS THE FOOTER - displays a copyright notice and
+          that Bootstrap powers this web page. -->
+    <div class="container bg-light min-padding-top">
+      <p class="text-center text-muted text-small mb-1">
+        Zixuan Li &copy; 2020. All rights reserved.
+        Powered by <a href="http://www.getbootstrap.com/" class="text-blue">Bootstrap</a>.
+      </p>
+      <p class="text-center text-muted text-small">
+        Theme based on the
+        <a href="http://startbootstrap.com/template-overviews/creative/" class="text-blue">Creative Bootstrap Theme</a>
+        by <a href="http://startbootstrap.com/" class="text-blue">Start Bootstrap</a>.
+      </p>
+    </div>
+
+    <!-- Updated jQuery, added Popper.js, and updated Bootstrap JS to 4.1.1 -->
+    <!-- Also pulling in the Bootstrap 4 update from Start Bootstrap too
+         https://github.com/BlackrockDigital/startbootstrap-creative  -->
+
+    <!-- jQuery 3.3.1 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <!-- Bootstrap 4.1 JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <!-- Plugin & Theme JavaScript (With Bootstrap 4 Update) -->
+    <script src="https://lizirene.github.io/js/jquery.easing.min.js"></script>
+    <script src="https://lizirene.github.io/js/scrollreveal.min.js"></script>
+    <script src="https://lizirene.github.io/js/jquery.magnific-popup.min.js"></script>
+    <script src="https://lizirene.github.io/js/creative.min.js"></script>
+
+  </body>
+</html>
+
