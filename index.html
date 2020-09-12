@@ -21,6 +21,7 @@
   <!-- Custom Fonts -->
   <!-- <script src="https://use.fontawesome.com/4dfd1d7bab.js"></script> -->
   <link href="css/all.css" rel="stylesheet"> 
+  <link href="css/timeline.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
   rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
@@ -107,17 +108,17 @@
         <div class="col-md-12">
           <p class="mb-5">Hey there! I'm a undergraduate student studying Computer Sicnece at the University of Southern California. Besides being a student, I'm also working as a research assistant and a Course Producer(Undergraduate Teaching Assistant) at the Viterbi School of Engineering.</p>
             <!-- interests and education -->
-	        <div class="row">
-	          <div style="margin-left:20%;margin-right:20%">
+	        <div class="row col-md-12">
+	          <div class="col-md-6" style="text-align: center">
 	            <h3>Interests</h3>
-	            <ul class="ul-interests" style="text-align:left">
+	            <ul class="ul-interests" >
 	              <li>Software Development</li>
 	              <li>Human-Robot Interaction</li>
 	              <li>Game Programming</li>
 	              <li>Mobile Development</li>
 	            </ul>
 	          </div>
-	          <div >
+	          <div class="col-md-6">
 	            <h3>Education</h3>
 	            <ul class="ul-edu fa-ul">
 	              <li>
@@ -205,12 +206,10 @@
   <!-- working experience  -->
   <section class="min-padding-top bg-white" id="experience">
   <div class="container">
-    <div class="col-md-12 section-heading">
-       <h1>Experiences</h1>
-    </div>
-    <div class="timeline">
       <!-- ITP 435 -->
-      <div class="row no-gutters justify-content-end justify-content-md-around align-items-start timeline-nodes">
+      <h1 class="section-heading">Working Experiences</h1>
+      <div class="timeline">
+     <div class="row no-gutters justify-content-end justify-content-md-around align-items-start timeline-nodes">
         <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
           <h3>Teaching Assistant for Professional C++</h3>
           <p>Work closely with Professor Sanjay for holding office hours, grading assignments and exams. We're covering but not limited to the following topics</p>
@@ -231,9 +230,9 @@
         </div>
       </div>
       <!-- CS 356 -->
-      <div class="row justify-content-end justify-content-md-around align-items-start timeline-nodes">
+    <div class="row no-gutters justify-content-end justify-content-md-around align-items-start timeline-nodes">
         <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
-          <h3>Course Producer for <a href="https://usc-cs356.github.io/">Introduction to Computer Systems</a></h3>
+          <h3>Course Producer for Introduction to Computer Systems</h3>
           <p>Work closely with Professor Redekopp and Professor Paolieri for holding office hours, grading assignments and exams. We're covering but not limited to the following topics</p>
           <ul>
             <li>Reverse engineer machine code and assembly code to a behavioral(high-level) descriptions</li>
@@ -251,6 +250,7 @@
           <time>August 2020-Present</time>
         </div>
       </div>
+      
       <!-- lab -->
       <div class="row no-gutters justify-content-end justify-content-md-around align-items-start timeline-nodes">
         <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
@@ -295,8 +295,8 @@
           <time>September 2019-July 2020</time>
         </div>
         </div>
-      </div>
-    </div>
+        </div>
+        </div>
   </section>
 
 
@@ -311,16 +311,13 @@
         </div>
         <div class="col-12 col-lg-8">
           <!-- toolbar -->
-          <div class="project-toolbar">
-            <!-- <div class=""> -->
-              <div class="btn-toolbar">
-                <div class="btn-group flex-wrap filter-button-group">
-                  <button data-filter="*" class="btn btn-primary btn-lg">All</button>
-                  <button data-filter=".C-plus-plus" class="btn btn-primary btn-lg">C++</button>
-                  <button data-filter=".games" class="btn btn-primary btn-lg">Games</button>
-                  <button data-filter=".web" class="btn btn-primary btn-lg">Web Projects</button>
-                  <button data-filter=".HCI" class="btn btn-primary btn-lg">HCI</button>
-                </div>
+            <div class="btn-toolbar" style="padding-bottom:10px">
+              <div class="flex-wrap filter-button-group">
+                <button data-filter="*" class="btn btn-primary btn-lg">All</button>
+                <button data-filter=".C-plus-plus" class="btn btn-primary btn-lg">C++</button>
+                <button data-filter=".games" class="btn btn-primary btn-lg">Games</button>
+                <button data-filter=".web" class="btn btn-primary btn-lg">Web Projects</button>
+                <button data-filter=".HCI" class="btn btn-primary btn-lg">Human-Robot Interaction</button>
               </div>
           </div>
           <!-- cards -->
