@@ -34,9 +34,12 @@
     ga('create', 'UA-68657454-1', 'auto');
     ga('send', 'pageview');
   </script>
+  
+  <link rel="stylesheet" href="https://lizirene.github.io/css/prism.css"/>
 </head>
   
 <body>
+<script src="https://lizirene.github.io/js/prism.js"></script>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
 
@@ -64,7 +67,7 @@
   </nav>
   
   <!--  Intro Section -->
-  <header class="masthead text-center text-white bg-dark d-flex">
+  <header class="masthead text-center text-dark bg-white d-flex">
     <div class="container my-auto">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -78,7 +81,7 @@
         </div>
         <br>
         <div class="col-lg-8 mx-auto">
-          <p class="text-faded mb-5 min-padding-top">
+          <p class="mb-5 min-padding-top">
            This is a virtual machine for the imaginary ITP-11 computer system with the Turtle Processing
           UnitTM. This advanced system features fifteen 32-bit registers, 1 KB of stack space, and 3-bit color
           graphics.         
@@ -117,7 +120,7 @@
   </section>
   
      <!--  Demo Section -->
-  <section class="min-padding-top text-center text-white bg-dark", id="demo">
+  <section class="min-padding-top text-center text-dark bg-white", id="demo">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -128,31 +131,206 @@
 <!--         First generating the AST -->
         <div class="col-lg-8 mx-auto min-padding-top">
            <h4 class="text-uppercase">First Step </h4>
-          <p class="text-faded mb-5">
+          <p>
             I familiarized myself with basic operations and implemented the ParseStr template metaprogram.
           </p>
-          <div class="row">
-            <div class="col-xs-6 col-md-6">
-              <img class="img" width="100%" height="60%" src="https://lizirene.github.io/img/portfolio/thumbnails/VM1.gif" alt="">
+          <div class="row mb-5" style="text-align: center">
+            <div style="width:100%;height:300px;overflow:scroll;margin:10px">
+              <pre>
+                <code class="language-cpp">
+          push r0
+          push r0
+          push r0
+          push r0
+          push r0
+          push r0
+          push r0
+          movi r1,5
+          storei 1,r1
+          movi r1,0
+          storei 0,r1
+          movi r1,100
+          storei 2,r1
+          movi r1,110
+          movi r2,105
+          mov tx,r1
+          mov ty,r2
+          pendown 
+          loadi r1,0
+          loadi r2,1
+          cmplt r1,r2
+          movi r1,37
+          jnt r1
+          loadi r1,0
+          movi r2,1
+          add r1,r1,r2
+          mov tc,r1
+          loadi r1,2
+          fwd r1
+          movi r1,144
+          add tr,tr,r1
+          loadi r1,0
+          inc r1
+          storei 0,r1
+          movi r1,19
+          jmp r1
+          penup 
+          movi r1,0
+          back r1
+          exit 
+                </code>
+              </pre>
             </div>
-            <div class="col-xs-6 col-md-6">
-            <img class="img" width="100%" height="60%" src="https://lizirene.github.io/img/portfolio/thumbnails/VM2.gif" alt="">
+            <div style="width: 100%"><p>input file</p></div>
+            <div style="width:100%;height:300px;overflow:scroll;margin:10px">
+              <pre>
+                <code class="language-cpp">
+                  //ParseStr template metaprogram
+                template <typename T>
+                std::tuple<T> ParseElem(const std::string& elem)
+                {}
+                //specific
+                template <>
+                inline std::tuple<int> ParseElem<int>(const std::string& elem){
+                    return std::make_tuple(std::stoi(elem));
+                }
+                template <>
+                inline std::tuple<std::string> ParseElem<std::string>(const std::string& elem){
+                    return std::make_tuple(elem);
+                }
+                template <>
+                inline std::tuple<double> ParseElem<double>(const std::string& elem){
+                    return std::make_tuple(std::stod(elem));
+                }
+
+                template <typename... Args>
+                std::tuple<Args...> ParseStr(std::vector<std::string>& paramV);
+
+                template <typename T, typename... Args>
+                std::tuple<T, Args...> ParseStrHelper(std::vector<std::string>& paramV)
+                {
+                    std::string elem = paramV.back();
+                    paramV.pop_back();
+                    return std::tuple_cat(ParseElem<T>(elem),ParseStr<Args...>(paramV));
+                }
+
+                template <typename... Args>
+                std::tuple<Args...> ParseStr(std::vector<std::string>& paramV){
+                    return ParseStrHelper<Args...>(paramV);
+                }
+
+                //base case
+                template <>
+                inline std::tuple<> ParseStr<>(std::vector<std::string>& paramV){
+                    return std::make_tuple();
+                }
+                </code>
+              </pre>
             </div>
+            <div style="width:100%"><p>parser for low level language(snippet)</p></div>
           </div>
         </div>
 <!--         next generating nodes -->
-        <div class="col-lg-8 mx-auto div-padding-fix">
+        <div class="col-lg-8 mx-auto min-padding-top">
            <h4 class="text-uppercase">Next </h4>
-          <p class="text-faded mb-5">
+          <p>
             I added the code for each operation and finished up the machine, including the stack, Turtle Processing Unit and exceptions.
           </p>
-          <div class="row">
-            <div class="col-xs-6 col-md-6">
-              <img class="img" width="100%" height="50%" src="https://lizirene.github.io/img/portfolio/thumbnails/VM3.gif" alt="">
+          <div class="row mb-5" style="text-align: center">
+            <div style="margin:10px;height:300px;width:100%;overflow:scroll">
+              <pre>
+                <code class="language-cpp">
+                  void Mul::Execute(Machine& machine)
+                {
+                    string reg1 = std::get<0>(mParameters), reg2 = std::get<1>(mParameters), reg3 = std::get<2>(mParameters);
+                    if(reg1 == "sc"){
+                        throw NonFatalException(10);
+                    }
+                    else if(reg1 == "r0"){
+                        throw NonFatalException(11);
+                    }
+                    
+                    int val1 = machine.getRegister(reg2), val2 = machine.getRegister(reg3);
+                    if(reg1 == "tc" && (val1 * val2 < 0 || val1 * val2 > 7)){
+                        throw NonFatalException(14); //set invalid color exception
+                    }
+                    machine.setRegister(reg1, val1 * val2);
+                    
+                    //underflow/overflow exception
+                    if(static_cast<int64_t>(val1) > INT32_MAX || static_cast<int64_t>(val2) > INT32_MAX
+                       || static_cast<int64_t>(val1) * static_cast<int64_t>(val2) > INT32_MAX){
+                        throw NonFatalException(12);
+                    }
+                    if(static_cast<int64_t>(val1) < INT32_MIN || static_cast<int64_t>(val2) < INT32_MIN
+                       || static_cast<int64_t>(val1) * static_cast<int64_t>(val2) < INT32_MIN){
+                        throw NonFatalException(13);
+                    }
+                }
+
+                void Div::Execute(Machine& machine)
+                {
+                    string reg1 = std::get<0>(mParameters), reg2 = std::get<1>(mParameters), reg3 = std::get<2>(mParameters);
+                    if(reg1 == "sc"){
+                        throw NonFatalException(10);
+                    }
+                    else if(reg1 == "r0"){
+                        throw NonFatalException(11);
+                    }
+                    if(machine.getRegister(reg3) == 0){
+                        throw FatalException(102); //divide by 0 exception
+                    }
+                    machine.setRegister(reg1, machine.getRegister(reg2) / machine.getRegister(reg3));
+                }
+                </code>
+              </pre>
             </div>
-            <div class="col-xs-6 col-md-6">
-            <img class="img" width="100%" height="50%" src="https://lizirene.github.io/img/portfolio/thumbnails/VM4.gif" alt="">
+            <div style="width:100%"><p>translate each operation(snippet)</p></div>
+            <div style="width:100%;height:300px;overflow:scroll;margin:10px">
+              <pre>
+                <code class="language-cpp">
+                  void Machine::setRegister(std::string str, int reg)
+                  {
+                      registers[str] = reg;
+                  }
+
+                  int Machine::getRegister(std::string str)
+                  {
+                      return registers[str];
+                  }
+
+                  void Machine::setFlag(std::string str, bool flag)
+                  {
+                      flags[str] = flag;
+                  }
+
+                  bool Machine::getFlag(std::string str)
+                  {
+                      return flags[str];
+                  }
+
+                  void Machine::fwd(int reg1)
+                  {
+                      int tx = registers["tx"], ty = registers["ty"];
+                      float angle = registers["tr"] * 0.0174533f;
+                      int endx = tx + static_cast<int>(std::cos(angle) * reg1);
+                      int endy = ty + static_cast<int>(std::sin(angle) * reg1);
+                      //if pendown, draw a line
+                      if(flags["pen"]){
+                          if(registers["tc"] < 0 || registers["tc"] > 7){
+                              throw NonFatalException(14);    //invalid color
+                          }
+                          std::vector<unsigned char> color = colors[registers["tc"]];
+                          drawer.pen_color(color[0], color[1], color[2]);
+                          drawer.line_segment(tx, ty, endx, endy);
+                      }
+                      //update tx, ty
+                      registers["tx"] = endx;
+                      registers["ty"] = endy;
+                  }
+                </code>
+              </pre>
             </div>
+            <div style="width:100%"><p>finish up machine and stack(snippet)</p></div>
           </div>
         </div>
         

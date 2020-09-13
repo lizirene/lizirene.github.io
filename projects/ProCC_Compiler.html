@@ -8,7 +8,7 @@
   <!-- Bootstrap Core CSS -->
   <!-- 6/15/2018: Updated to the latest version of Bootstrap (4.1.1) -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
+	
   <!-- Custom Fonts -->
   <script src="https://use.fontawesome.com/4dfd1d7bab.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
@@ -34,9 +34,11 @@
     ga('create', 'UA-68657454-1', 'auto');
     ga('send', 'pageview');
   </script>
+  <link rel="stylesheet" href="https://lizirene.github.io/css/prism.css"/>
 </head>
   
 <body>
+<script src="https://lizirene.github.io/js/prism.js"></script>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
 
@@ -64,7 +66,7 @@
   </nav>
   
   <!--  Intro Section -->
-  <header class="masthead text-center text-white bg-dark d-flex">
+  <header class="masthead text-center text-dark bg-white d-flex">
     <div class="container my-auto">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -78,7 +80,7 @@
         </div>
         <br>
         <div class="col-lg-8 mx-auto">
-          <p class="text-faded mb-5 min-padding-top">
+          <p class="mb-5 min-padding-top">
             It's a compiler that will be able to convert from our ProCC high-level language into the ITP-11 assembly for its <a href="Virtual_Machine.html">Virtual Machine</a>.
           </p>
           <p class="text-italic mb-5 min-padding-top">
@@ -90,7 +92,7 @@
   </header>
   
    <!--  Description Section -->
-  <section class="min-padding-top text-center text-dark bg-light", id="description">
+  <section class="min-padding-top text-center text-dark bg-light" id="description">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -104,7 +106,6 @@
             The name "compiler" is primarily used for programs that translate source code from a high-level programming language to a lower level language to create an executable program.
             -- Wikipedia" 
           </p>
-          <img class="img-fluid min-padding-top" width="100%" height="auto" src="https://lizirene.github.io/img/portfolio/thumbnails/PC0.jpg" alt="">
           <p class="text-italic min-padding-top mb-5">
             For this project, I did <strong>lexical analysis</strong> aka scanning and <strong>syntax analysis</strong> aka parsing to make sure series of tokens follows the grammar rules.
             <strong>Bison</strong> is the open source version of Yacc (a Compiler Compiler) that I was using.
@@ -115,7 +116,7 @@
   </section>
   
      <!--  Demo Section -->
-  <section class="min-padding-top text-center text-white bg-dark", id="demo">
+  <section class="min-padding-top text-center text-dark bg-white" id="demo">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -126,33 +127,213 @@
 <!--         First generating the AST -->
         <div class="col-lg-8 mx-auto min-padding-top">
            <h4 class="text-uppercase">First Step </h4>
-          <p class="text-faded mb-5">
+          <p>
             I familiarized myself with the Bison grammar used in the input files and <strong>generated the AST</strong>
             (syntax tree, a tree representation of the abstract syntactic structure of source code written in a programming language) 
             for the Bison code structures.
           </p>
-          <div class="row">
-            <div class="col-xs-6 col-md-6">
-              <img class="img" width="100%" height="60%" src="https://lizirene.github.io/img/portfolio/thumbnails/PC1.gif" alt="">
+          <div class="row mb-5" style="text-align:center">
+            <div style="width:100%;height:200px;overflow:scroll;margin:10px">
+              <pre>
+               <code class="language-cpp">
+              	// Testing if statement
+				data {
+					var abc;
+					var x;
+					array myarr[5];
+				}
+				main {
+					abc = 20;
+					myarr[0] = 20;
+					if abc == myarr[0] {
+						abc = 15;
+					}
+					
+					if abc < 37 {
+						x = 1;
+					} else {
+						x = 0;
+					}
+				}
+               </code>
+              </pre>
             </div>
-            <div class="col-xs-6 col-md-6">
-            <img class="img" width="100%" height="60%" src="https://lizirene.github.io/img/portfolio/thumbnails/PC2.gif" alt="">
+            <div style="width:100%"><p>input file</p></div>
+            <div style="width:100%;height:200px;overflow:scroll;margin:10px">
+             <pre>
+             <code class="language-cpp">
+             	%error-verbose
+
+				/* Tokens/Terminal symbols */
+				%token <token> TDATA TMAIN TLBRACE TRBRACE TSEMI TLPAREN TRPAREN
+				%token <token> TLBRACKET TRBRACKET TINC TDEC TEQUALS
+				%token <token> TADD TSUB TMUL TDIV
+				%token <token> TLESS TISEQUAL
+				%token <token> TVAR TARRAY
+				%token <token> TIF TELSE TWHILE
+				%token <token> TCOMMA TPENUP TPENDOWN TSETPOS TSETCOLOR TFWD TBACK TROT
+				%token <string> TINTEGER TIDENTIFIER
+				
+				/* Types/non-terminal symbols */
+				%type <program> program
+				%type <data> data decls
+				%type <decl> decl
+				%type <numeric> numeric
+				%type <statement> statement
+				%type <block> block main
+				%type <comparison> comparison
+				%type <expr> expr
+				
+				/* Operator precedence */
+				%left TADD TSUB
+				%left TMUL TDIV
+
+				%%
+				
+				program		: data main 
+								{ 
+									$$ = new NProgram($1, $2);
+									gProgram = $$;
+									std::cout << "Program\n";
+								}
+				;
+				
+				data		: TDATA TLBRACE TRBRACE
+								{
+									$$ = new NData();
+									std::cout << "Data (no decls)\n";
+								}
+							| TDATA TLBRACE decls TRBRACE
+								{
+									$$ = $3;
+									std::cout << "Data\n";
+								}
+				
+				;
+
+				decls		: decl 
+								{
+									$$ = new NData();
+									$$->AddDecl($1);
+									std::cout << "Single decl\n";
+								}
+							| decls decl
+								{
+									$$->AddDecl($2);
+									std::cout << "Multiple decls\n";
+								}
+				;
+				
+				decl		: TVAR TIDENTIFIER TSEMI
+								{
+									$$ = new NVarDecl(*($2));
+									std::cout << "Var declaration " << *($2) << '\n';
+								}
+							| TARRAY TIDENTIFIER TLBRACKET numeric TRBRACKET TSEMI
+								{
+									$$ = new NArrayDecl(*($2), $4);
+									std::cout << "Array declaration " << *($2) << '\n';
+								}
+				;
+
+				main		: TMAIN TLBRACE block TRBRACE
+								{
+									$$ = $3;
+									std::cout << "Main{ block }\n";
+								}
+							| TMAIN TLBRACE TRBRACE
+								{
+									$$ = new NBlock();
+									std::cout << "Main (no stmts)\n";
+								} 
+				;
+             </code>
+             </pre>
             </div>
+            <div style="width:100%"><p>syntax tree(snippet)</p></div>
           </div>
         </div>
 <!--         next generating nodes -->
-        <div class="col-lg-8 mx-auto div-padding-fix">
+        <div class="col-lg-8 mx-auto min-padding-top">
            <h4 class="text-uppercase">Next </h4>
-          <p class="text-faded mb-5">
+          <p>
             I add the code to <strong>generate ITP-11 assembly code</strong> and finish <strong>register allocation</strong> with linear scan.
           </p>
-          <div class="row">
-            <div class="col-xs-6 col-md-6">
-              <img class="img" width="100%" height="50%" src="https://lizirene.github.io/img/portfolio/thumbnails/PC3.gif" alt="">
+          <div class="row mb-5" style="text-align:center"">
+            <div style="margin:10px;height:200px;width:100%;overflow:scroll">
+              <pre>
+              	<code class="language-cpp">
+              		void NArrayDecl::CodeGen(CodeContext& context)
+					{
+					    for(int i = 0; i < mSize->GetValue(); ++i){
+					        context.mOps.emplace_back(Instruction("push",{"r0"}));
+					    }
+					    context.varToIdx.insert(std::make_pair(mName, context.getStackNext()));
+					}
+					
+					void NNumericExpr::CodeGen(CodeContext& context)
+					{
+					    mResultRegister = context.GetNextTempReg();
+					    context.mOps.emplace_back(Instruction("movi", {mResultRegister, std::to_string(mNumeric->GetValue())}));
+					}
+					
+					void NVarExpr::CodeGen(CodeContext& context)
+					{
+					    mResultRegister = context.GetNextTempReg();
+					    context.mOps.emplace_back(Instruction("loadi", {mResultRegister, std::to_string(context.varToIdx[mName])}));
+					}
+              	</code>
+              </pre>
             </div>
-            <div class="col-xs-6 col-md-6">
-            <img class="img" width="100%" height="50%" src="https://lizirene.github.io/img/portfolio/thumbnails/PC4.gif" alt="">
+            <div style="width:100%"><p>generate ITP-11 assembly code(snippet)</p></div>
+            <div style="width:100%;height:200px;overflow:scroll;margin:10px">
+            	<pre>
+            		<code class="language-cpp">
+            		push r0
+					push r0
+					push r0
+					push r0
+					push r0
+					push r0
+					push r0
+					push r0
+					movi r1,5
+					storei 1,r1
+					movi r1,0
+					storei 0,r1
+					movi r1,100
+					storei 2,r1
+					movi r1,110
+					movi r2,105
+					mov tx,r1
+					mov ty,r2
+					pendown 
+					loadi r1,0
+					loadi r2,1
+					cmplt r1,r2
+					movi r1,37
+					jnt r1
+					loadi r1,0
+					movi r2,1
+					add r1,r1,r2
+					mov tc,r1
+					loadi r1,2
+					fwd r1
+					movi r1,144
+					add tr,tr,r1
+					loadi r1,0
+					inc r1
+					storei 0,r1
+					movi r1,19
+					jmp r1
+					penup 
+					movi r1,0
+					back r1
+					exit 
+            		</code>
+            	</pre>
             </div>
+            <div style="width:100%"><p>lower level language for <a href="Virtual_machine.html">Virtual Machine</a>(snippet)</p></div>
           </div>
         </div>
         
