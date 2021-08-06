@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +16,8 @@
   <title>Welcome! Zixuan Li</title>
 
   <!-- Bootstrap Core CSS -->
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">-->
 
   <!-- Custom Fonts -->
   <!-- <script src="https://use.fontawesome.com/4dfd1d7bab.js"></script> -->
@@ -41,6 +42,8 @@
   <!-- Custom isotope filter and format -->
   <!--  jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
     <!-- <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script> -->
   <script src="js/isotope.pkgd.min.js"></script>
   <!-- Google Analytics Tracking Tag. Track how people access my site and such. -->
@@ -95,9 +98,9 @@
   </nav>
 
   <!--  Intro Section -->
-  <section class="text-center bg-white" style="height:100vh">
+  <section class="text-center bg-white">
     <div class="container">
-    <img src="img/portfolio/thumbnails/avatar.jpg" alt="Avatar" class="rounded-circle" style="width:30%;height:20%;margin-top:5%;margin-bottom:5%">
+    <img src="img/portfolio/thumbnails/avatar.jpg" alt="Avatar" style="width:150px;height:200px;margin-top:5%;margin-bottom:5%">
       <div class="row">
         <div class="col-md-12">
           <h1 class="text-uppercase">
@@ -106,49 +109,51 @@
           <hr>
         </div>
         <div class="col-md-12">
-          <p class="mb-5">Hey there! I'm a master student studying Computer Sicnece at the University of Southern California. Besides being a student, I'm also working as a research assistant in the <a href="http://robotics.usc.edu/interaction/people/">Interaction Lab</a> and a <a href="https://usc-cs356.github.io/people.html">Course Producer</a>(Undergraduate Teaching Assistant) at the Viterbi School of Engineering.</p>
-            <!-- interests and education -->
-	        <div class="row col-md-12">
-	          <div class="col-md-6">
-                <h3>Interests</h3>
-                <ul class="ul-edu fa-ul">
-                  <li>
-                    <div class="description">
-                      <p class="course">Machine Learning</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="description">
-                      <p class="course">Software Development(iOS)</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="description">
-                      <p class="course">Full Stack/Back End</p>
-                    </div>
-                  </li>
-                </ul>
-	          </div>
-	          <div class="col-md-6">
-	            <h3>Education</h3>
-	            <ul class="ul-edu fa-ul">
-	              <li>
-	                <div class="description">
-<!--                      <i class="fa-li fa fa-graduation-cap"></i>-->
-	                  <p class="course">M.S. in Computer Science, May 2022</p>
-	                  <p class="institution">University of Southern California</p>
-	                </div>
-	              </li>
-	              <li>
-	                <div class="description">
-<!--                      <i class="fa-li fa fa-graduation-cap"></i>-->
-	                  <p class="course">B.S. in Computer Science, May 2021</p>
-	                  <p class="institution">University of Southern California</p>
-	                </div>
-	              </li>
-	            </ul>
-	          </div>
-	        </div>
+          <p class="mb-5">
+            Hey there! <br>
+            I'm a master student studying Computer Science at the University of Southern California.
+            Besides being a student, I'm also working as a research assistant in the <a href="http://robotics.usc.edu/interaction/people/">Interaction Lab</a> and a <a href="https://usc-cs356.github.io/people.html">Course Producer</a>(Undergraduate Teaching Assistant) at the Viterbi School of Engineering.
+          </p>
+          <!-- interests and education -->
+          <div class="row col-md-12">
+            <div class="col-md-6">
+              <h3>Interests</h3>
+              <ul class="ul-edu fa-ul">
+                <li>
+                  <div class="description">
+                    <p class="course">Software Development(Back End)</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="description">
+                    <p class="course">iOS Development</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="description">
+                    <p class="course">Machine Learning/Security</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h3>Education</h3>
+              <ul class="ul-edu fa-ul">
+                <li>
+                  <div class="description">
+                    <p class="course">M.S. in Computer Science, May 2022</p>
+                    <p class="institution">University of Southern California</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="description">
+                    <p class="course">B.S. in Computer Science, May 2021, GPA 3.93/4.0</p>
+                    <p class="institution">University of Southern California</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -166,7 +171,7 @@
           <div class="text-center">
           <i class="fa fa-4x fa-code" style="color:#f05f40"></i>
           <h3>Programming Languages</h3>
-          <p>C++/C, Spark SQL, Python, Java, Swift</p>
+          <p>C++/C(professional), Python, Java, Swift, Spark</p>
           </div>
         </div>
         <!-- ML -->
@@ -174,7 +179,7 @@
           <div class="text-center">
           <i class="fa fa-4x fa-brain" style="color:#f05f40"></i>
           <h3>Machine Learning</h3>
-          <p>Keras, TensorFlow, OpenCV</p>
+          <p>Scikit-learn, Matplotlib, OpenCV</p>
           </div>
         </div>
         <!-- math -->
@@ -221,11 +226,12 @@
         <!-- Software Engineer Intern -->
         <div class="row no-gutters justify-content-end justify-content-md-around align-items-start timeline-nodes">
           <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
-            <h3>Software Engineer Intern @ Linkedin Corporation</h3>
-            <p> Design and implement an AI based pipeline for closed job detection.</p>
+            <h3>Software Engineer Intern 21'@ Linkedin Corporation(Job Foundation Team)</h3>
+            <p> Developed an AI-based model for closed job detection.</p>
             <ul>
-              <li>Java and Spark SQL</li>
-              <li>Feature selection, Modeling and model evaluation</li>
+              <li>Designed and implemented candidate selection pipeline for open/closed jobs that continuously runs on a hourly basis</li>
+              <li>Summarized patterns and extracted web features, modeled with XGBoost Classifier</li>
+              <li>Model performance evaluation metrics: accuracy 78.2%, precision 78.3% and recall 78.5% with 18k samples w/ tuning</li>
             </ul>
           </div>
           <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
@@ -241,12 +247,13 @@
      <div class="row no-gutters justify-content-end justify-content-md-around align-items-start timeline-nodes">
         <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
           <h3>Teaching Assistant for Professional C++</h3>
-          <p>Work closely with Professor Sanjay for holding office hours, grading assignments and exams. We're covering but not limited to the following topics</p>
+          <p>
+            Based on the recommendation of Prof. Madhav, got recognized for the <strong>ITP Course Teaching Assistant Award</strong>
+          </p>
           <ul>
-            <li>Lambdas and C++ Functional Programming</li>
-            <li>Virtual Tables, Optimization and Security Basics</li>
-            <li>Parallel Programming in C++</li>
-            <li>Smart Pointers</li>
+            <li><strong>Top</strong> contributor besides professors on Piazza</li>
+            <li>Held 3 hr OH per week, preparing students with functional programming and parallel programming skills and helping with debugging and algorithms</li>
+            <li>Worked closely with Prof. Madhav; Graded projects and exams</li>
           </ul>
         </div>
         <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
@@ -262,12 +269,11 @@
     <div class="row no-gutters justify-content-end justify-content-md-around align-items-start timeline-nodes">
         <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
           <h3>Course Producer for Introduction to Computer Systems</h3>
-          <p>Work closely with Professor Redekopp and Professor Paolieri for holding office hours, grading assignments and exams. We're covering but not limited to the following topics</p>
+          <p>Worked closely with Prof. Paolieri and Prof. Redekopp
+          </p>
           <ul>
-            <li>Reverse engineer machine code and assembly code to a behavioral(high-level) descriptions</li>
-            <li>Translate high-level software code to corresponding x86 instruction sequences</li>
-            <li>Identify various software vulnerabilities and how they may be exploited</li>
-            <li>Organize code and use compiler settings to achieve enhanced performance on specific processor architectures</li>
+            <li><strong>Top</strong> contributor besides professors on Piazza</li>
+            <li>Held 4 hr of OH per week, helping students with assembly language assignments, debug cache/storage related labs and understand fundamentals; Graded labs and exams</li>
           </ul>
         </div>
         <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
@@ -276,7 +282,7 @@
           </div>
         </div>
         <div class="col-10 col-md-5 order-1 order-md-3 py-3 timeline-date">
-          <time>August 2020-Present</time>
+          <time>August 2020-May 2021</time>
         </div>
       </div>
       
@@ -284,10 +290,20 @@
       <div class="row no-gutters justify-content-end justify-content-md-around align-items-start timeline-nodes">
         <div class="col-10 col-md-5 order-3 order-md-1 timeline-content">
           <h3>Undergraduate Research Assistant</h3>
-          <p>Researched in Professor <a href="https://robotics.usc.edu/~maja/">Maja Matarić</a>'s Interaction Lab focusing on Human Robot Interaction, collaborating with PhD student Chris Birmingham</p>
+          <p>
+            Collaborated with Ph.D. student Chris Birmingham and supervised by Dr. <a href="https://robotics.usc.edu/~maja/">Maja Matarić</a>
+          </p>
+          <p><strong>Robot-Facilitated Cancer Support Group</strong>
+            <br>
+            <strong>Goal</strong>: Design and develop a robot to help patients with oncology with psychological problems including distress and
+            anxiety; Develop a robot facilitator to maximize group cohesion and patient disclosure to maximize the effectiveness of the
+            cancer support group
+          </p>
           <ul>
-            <li>Design and develop a robot to help patients with oncology with psychological problems including distress and anxiety; Plan for the pilot study by December 2020</li>
-            <li>Explore how robots and people establish, maintain, and repair trust in Multi-Party Human-Robot Interaction; Examine robot group mediation for group counseling and potentials to team performance in robot service and support teams</li>
+            <li>Developed a machine learning-based RASA chatbot for continuous conversations in dyadic use cases which can detect the mood of patients with oncology from their words, assess their distress level and give reasonable and caring responses.</li>
+            <li>Creatively extended from dyadic use case to multi-party case, designing a robot facilitator to ask questions and guide the conversation in a support group efficiently.</li>
+            <li>Designed logic flows and trained NLU models to correctly distinguish and predict patients’ intents and provide reasonable and appropriate responses; Reached an overall accuracy of 80% and up to 90% on certain topics.</li>
+            <li>Led and cooperated with another two team members to ensure successful and timely task completion.</li>
           </ul>
         </div>
         <div class="col-2 col-sm-1 px-md-3 order-2 timeline-image text-md-center">
@@ -329,158 +345,148 @@
 
 
   <!-- GitHub Section -->
-  <section class="min-padding-top bg-light" id="projects">
-	<div class="container">
-
-    <!-- GitHub links below -->
-      <div class="row">
-        <div class="col-12 col-lg-4 section-heading">
-          <h1>Projects</h1>
+  <section class=" min-padding-top bg-light pb-5" id="projects">
+    <div class="col-12 col-lg-4 section-heading">
+      <h1>Projects</h1>
+    </div>
+    <div class="container text-center col-12 col-lg-8">
+      <!-- toolbar -->
+      <div class="btn-toolbar" style="padding-bottom:20px">
+        <div class="flex-wrap filter-button-group">
+          <button data-filter="*" class="btn btn-primary btn-lg pb-3">All</button>
+          <button data-filter=".C-plus-plus" class="btn btn-primary btn-lg">C++</button>
+          <button data-filter=".games" class="btn btn-primary btn-lg">Games</button>
+          <button data-filter=".web" class="btn btn-primary btn-lg">Web Projects</button>
+          <button data-filter=".iOS" class="btn btn-primary btn-lg">iOS Projects</button>
+          <button data-filter=".NLP" class="btn btn-primary btn-lg">Natural Language Processing</button>
+          <button data-filter=".ML" class="btn btn-primary btn-lg">Machine Learning</button>
         </div>
-        <div class="col-12 col-lg-8">
-          <!-- toolbar -->
-            <div class="btn-toolbar" style="padding-bottom:10px">
-              <div class="flex-wrap filter-button-group">
-                <button data-filter="*" class="btn btn-primary btn-lg">All</button>
-                <button data-filter=".C-plus-plus" class="btn btn-primary btn-lg">C++</button>
-                <button data-filter=".games" class="btn btn-primary btn-lg">Games</button>
-                <button data-filter=".web" class="btn btn-primary btn-lg">Web Projects</button>
-                <button data-filter=".iOS" class="btn btn-primary btn-lg">iOS Projects</button>
-                <button data-filter=".NLP" class="btn btn-primary btn-lg">Natural Language Processing</button>
-              </div>
-            </div>
-          <!-- cards -->
-          <div class="grid" style="position: relative;">
-            <!-- 1st Link: source code for ProCC Compiler -->
-            <div class="grid-card grid-item C-plus-plus" style="position:relative;left: 0px;top: 0px">
-              <div class="card">
-                <a href="projects/ProCC_Compiler.html"><img class="card-img-top hover-overlay" src="img/portfolio/thumbnails/ProCC_Compiler.jpg" target="_blank" rel="noopener" alt class="img-responsive"></a>
-                <div class="card-body">
-                  <div class="card-text">
-                    <h4><a href="projects/ProCC_Compiler.html">ProCC Compiler</a></h4>
-                    <h6>Created a compiler that will be able to convert from our ProCC high-level language into the ITP-11 assembly for the virtual machine beside.</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-              <!-- 2nd Link: source code for Virture Machine 
-  pic copyright https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fcategory%2Ftechnology&psig=AOvVaw3XILEl_4KXj6pVXyssp8ID&ust=1597643289727000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCJD9wZeDn-sCFQAAAAAdAAAAABAD      -->  
-            <div class="grid-card grid-item C-plus-plus" style="position:relative;left: 0px;top: 0px">
-              <div class="card">
-                <a href="projects/Virtual_Machine.html"><img class="card-img-top hover-overlay" src="img/portfolio/thumbnails/Virtual_Machine.jpg" target="_blank" rel="noopener"alt class="img-responsive"></a>
-                <div class="card-body">
-                  <div class="card-text">
-                    <h4><a href="projects/Virtual_Machine.html">Virtual Machine</a></h4>
-                    <h6>Implemented a virtual machine for the imaginary ITP-11 computer system with the Turtle Processing UnitTM. This advanced system features fifteen 32-bit registers, 1 KB of stack space, and 3-bit color graphics.</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 3rd Link: source code for Parkour's Edge -->
-            <div class="grid-card grid-item games" style="position:relative;left: 0px;top: 0px">
-              <div class="card">
-                <a href="projects/Parkour_Egde.html"><img class="card-img-top hover-overlay" src="img/portfolio/thumbnails/Parkour_Egde.jpg" target="_blank" rel="noopener" alt class="img-responsive"></a>
-                <div class="card-body">
-                  <div class="card-text">
-                    <h4><a href="projects/Parkour_Egde.html">Parkour's Egde</a></h4>
-                    <h6>A detailed implementation of a first-person 3D parkour game in which player can run, jump, climb walls and collect coins.</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 4th Link: source code for Pac-Man game -->
-            <div class="grid-card grid-item games" style="position:relative;left: 0px;top: 0px">
-              <div class="card">
-                <a href="projects/Pac_Man.html"><img class="card-img-top hover-overlay" src="img/portfolio/thumbnails/Pac_Man0.jpg" target="_blank" rel="noopener" alt class="img-responsive"></a>
-                <div class="card-body">
-                  <div class="card-text">
-                    <h4><a href="projects/Pac_Man.html">Pac Man</a></h4>
-                    <h6>A detailed remake of the classic Pac-Man game.</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 5th Link: source code for RASA chatbot -->
-            <!-- img src https://chatbotsmagazine.com/chatbot-the-next-big-thing-512b292303a4 -->
-            <div class="grid-card grid-item NLP" style="position:relative;left: 0px;top: 0px">
-              <div class="card">
-                <a href="projects/ChatBot.html"><img class="card-img-top hover-overlay" src="img/portfolio/thumbnails/ChatBot0.jpg" target="_blank" rel="noopener" alt class="img-responsive"></a>
-                <div class="card-body">
-                  <div class="card-text">
-                    <h4><a href="projects/ChatBot.html">Chat Bot</a></h4>
-                    <h6>A chatbot powered by RASA which is designed to interact with cancer patients.</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 6th Link: source code for Group project 201 -->
-            <div class="grid-card grid-item web" style="position:relative;left: 0px;top: 0px">
-              <div class="card">
-                <a href="https://github.com/JessieShuyangZhang/SeCure_that_A---CS201project"><img class="card-img-top hover-overlay" src="img/portfolio/thumbnails/STA0.jpg" target="_blank" rel="noopener" alt class="img-responsive"></a>
-                <div class="card-body">
-                  <div class="card-text">
-                    <h4><a href="https://github.com/JessieShuyangZhang/SeCure_that_A---CS201project">SeCure_that_A</a></h4>
-                    <h6>A web which helps you make a better choice on course selection.</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 7th Link: source code for Mario Kart game -->
-            <div class="grid-card grid-item games" style="position:relative;">
-              <div class="card">
-                <a href="projects/Mario_Kart.html"><img class="card-img-top hover-overlay" src="img/portfolio/thumbnails/Mario_Kart0.jpg" target="_blank" rel="noopener" alt class="img-responsive"></a>
-                <div class="card-body">
-                  <div class="card-text">
-                    <h4><a href="projects/Mario_Kart.html">Mario Kart</a></h4>
-                    <h6>A detailed remake of the classic Mario Kart game.</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 8th Link: handwritten text recognition with Best path decoding and Beam Search-->
-            <!--  image src https://towardsdatascience.com/faq-build-a-handwritten-text-recognition-system-using-tensorflow-27648fb18519  -->
-            <div class="grid-card grid-item NLP" style="position:relative;left: 0px;top: 0px">
-              <div class="card">
-                <a href="img/HTR project final report.pdf"><img class="card-img-top hover-overlay" src="img/portfolio/thumbnails/HTR0.jpg" target="_blank" rel="noopener" alt class="img-responsive"></a>
-                <div class="card-body">
-                  <div class="card-text">
-                    <h4><a href="img/HTR project final report.pdf">Handwriting Recognition</a></h4>
-                    <h6>A project which rebuilt, trained, and analyzed a CRNN model with 5 CNN layers and 2 LSTM layers along with the CTC best path
-                      decoding and beam search decoding on the IAM handwriting dataset and Bentham HTR dataset.</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 9th Link: source code for Group project 310 -->
-            <div class="grid-card grid-item web" style="position:relative;left: 0px;top: 0px">
-              <div class="card">
-                <a href="https://github.com/lizirene/310-groupp"><img class="card-img-top hover-overlay" src="img/portfolio/thumbnails/SP0.jpg" target="_blank" rel="noopener" alt class="img-responsive"></a>
-                <div class="card-body">
-                  <div class="card-text">
-                    <h4><a href="https://github.com/lizirene/310-groupp">Stock Portfolio</a></h4>
-                    <h6>A web application that can help users track the value of their stock portfolio over time and make investment decisions.</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 10th Link: source code for Group project 401 -->
-            <div class="grid-card grid-item iOS" style="position:relative;left: 0px;top: 0px">
-              <div class="card">
-                <a href="projects/Harvest_Market.html"><img class="card-img-top hover-overlay" src="img/portfolio/thumbnails/Harvestlogo.png" target="_blank" rel="noopener" alt class="img-responsive"></a>
-                <div class="card-body">
-                  <div class="card-text">
-                    <h4><a href="projects/Harvest_Market.html">Harvest-Farmer's Market Delivery Service</a></h4>
-                    <h6>Harvest is an iOS app that provides farm produce delivery service, similar to popular apps, such as “Postmates” and “DoorDash.” </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-         </div>
-       </div>
-     </div>
-	</div>
-   </section>
+      </div>
 
+      <!-- Masonry grid -->
+      <div class="gallery-wrapper">
+        <!-- Grid sizer -->
+        <div class="grid-sizer col-lg-4 col-md-6"></div>
+
+        <!-- Grid item -->
+        <!-- 1st Link: source code for ProCC Compiler -->
+        <div class="col-lg-4 col-md-6 grid-item mb-4 C-plus-plus">
+          <img class="img-fluid w-100 mb-3 img-thumbnail shadow-sm rounded-0" src="img/portfolio/thumbnails/ProCC_Compiler.jpg" alt="">
+          <h2 class="h4"><a href="projects/ProCC_Compiler.html">ProCC Compiler</a></h2>
+          <p class="small text-muted font-italic">
+          Created a compiler that will be able to convert from our ProCC high-level language into the ITP-11 assembly for the virtual machine beside.
+          </p>
+        </div>
+
+        <!-- Grid item -->
+        <!-- 2nd Link: source code for Virture Machine
+ pic copyright https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fcategory%2Ftechnology&psig=AOvVaw3XILEl_4KXj6pVXyssp8ID&ust=1597643289727000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCJD9wZeDn-sCFQAAAAAdAAAAABAD      -->
+        <div class="col-lg-4 col-md-6 grid-item mb-4 C-plus-plus">
+          <img class="img-fluid w-100 mb-3 img-thumbnail shadow-sm rounded-0" src="img/portfolio/thumbnails/Virtual_Machine.jpg" alt="">
+          <h2 class="h4"><a href="projects/Virtual_Machine.html">Virtual Machine</a></h2>
+          <p class="small text-muted font-italic">
+            Implemented a virtual machine for the imaginary ITP-11 computer system with the Turtle Processing UnitTM. This advanced system features fifteen 32-bit registers, 1 KB of stack space, and 3-bit color graphics.
+          </p>
+        </div>
+
+        <!-- Grid item -->
+        <!-- 3rd Link: source code for Parkour's Edge -->
+        <div class="col-lg-4 col-md-6 grid-item mb-4 games">
+          <img class="img-fluid w-100 mb-3 img-thumbnail shadow-sm rounded-0" src="img/portfolio/thumbnails/Parkour_Egde.jpg" alt="">
+          <h2 class="h4"><a href="projects/Parkour_Egde.html">Parkour's Egde</a></h2>
+          <p class="small text-muted font-italic">
+            A detailed implementation of a first-person 3D parkour game in which player can run, jump, climb walls and collect coins.
+          </p>
+        </div>
+
+        <!-- Grid item -->
+        <!-- 4th Link: source code for Pac-Man game -->
+        <div class="col-lg-4 col-md-6 grid-item mb-4 games">
+          <img class="img-fluid w-100 mb-3 img-thumbnail shadow-sm rounded-0" src="img/portfolio/thumbnails/Pac_Man0.jpg" alt="">
+          <h2 class="h4"><a href="projects/Pac_Man.html">Pac Man</a></h2>
+          <p class="small text-muted font-italic">
+            A detailed remake of the classic Pac-Man game.
+          </p>
+        </div>
+
+        <!-- Grid item -->
+        <!-- 5th Link: source code for RASA chatbot -->
+        <!-- img src https://chatbotsmagazine.com/chatbot-the-next-big-thing-512b292303a4 -->
+        <div class="col-lg-4 col-md-6 grid-item mb-4 NLP">
+          <img class="img-fluid w-100 mb-3 img-thumbnail shadow-sm rounded-0" src="img/portfolio/thumbnails/ChatBot0.jpg" alt="">
+          <h2 class="h4"><a href="projects/ChatBot.html">Chat Bot</a></h2>
+          <p class="small text-muted font-italic">
+            A chatbot powered by RASA which is designed to interact with cancer patients.
+          </p>
+        </div>
+
+        <!-- Grid item -->
+        <!-- 6th Link: source code for Group project 201 -->
+        <div class="col-lg-4 col-md-6 grid-item mb-4 web">
+          <img class="img-fluid w-100 mb-3 img-thumbnail shadow-sm rounded-0" src="img/portfolio/thumbnails/STA0.jpg" alt="">
+          <h2 class="h4"><a href="https://github.com/JessieShuyangZhang/SeCure_that_A---CS201project">SeCure_that_A</a></h2>
+          <p class="small text-muted font-italic">
+            A web which helps you make a better choice on course selection.
+          </p>
+        </div>
+
+        <!-- Grid item -->
+        <!-- 7th Link: source code for Mario Kart game -->
+        <div class="col-lg-4 col-md-6 grid-item mb-4 games">
+          <img class="img-fluid w-100 mb-3 img-thumbnail shadow-sm rounded-0" src="img/portfolio/thumbnails/Mario_Kart0.jpg" alt="">
+          <h2 class="h4"><a href="projects/Mario_Kart.html">Mario Kart</a></h2>
+          <p class="small text-muted font-italic">
+            A detailed remake of the classic Mario Kart game.
+          </p>
+        </div>
+
+        <!-- Grid item -->
+        <!-- 8th Link: handwritten text recognition with Best path decoding and Beam Search-->
+        <!--  image src https://towardsdatascience.com/faq-build-a-handwritten-text-recognition-system-using-tensorflow-27648fb18519  -->
+        <div class="col-lg-4 col-md-6 grid-item mb-4 NLP">
+          <img class="img-fluid w-100 mb-3 img-thumbnail shadow-sm rounded-0" src="img/portfolio/thumbnails/HTR0.jpg" alt="">
+          <h2 class="h4"><a href="img/HTR project final report.pdf">Handwriting Recognition</a></h2>
+          <p class="small text-muted font-italic">
+            A project which rebuilt, trained, and analyzed a CRNN model with 5 CNN layers and 2 LSTM layers along with the CTC best path
+            decoding and beam search decoding on the IAM handwriting dataset and Bentham HTR dataset.
+          </p>
+        </div>
+
+        <!-- Grid item -->
+        <!-- 9th Link: source code for Group project 310 -->
+        <div class="col-lg-4 col-md-6 grid-item mb-4 web">
+          <img class="img-fluid w-100 mb-3 img-thumbnail shadow-sm rounded-0" src="img/portfolio/thumbnails/SP0.jpg" alt="">
+          <h2 class="h4"><a href="https://github.com/lizirene/310-groupp">Stock Portfolio</a></h2>
+          <p class="small text-muted font-italic">
+            A web application that can help users track the value of their stock portfolio over time and make investment decisions.
+          </p>
+        </div>
+
+        <!-- Grid item -->
+        <!-- 10th Link: source code for Group project 401 -->
+        <div class="col-lg-4 col-md-6 grid-item mb-4 iOS">
+          <img class="img-fluid w-100 mb-3 img-thumbnail shadow-sm rounded-0" src="img/portfolio/thumbnails/SP0.jpg" alt="">
+          <h2 class="h4"><a href="https://github.com/lizirene/310-groupp">Stock Portfolio</a></h2>
+          <p class="small text-muted font-italic">
+            A web application that can help users track the value of their stock portfolio over time and make investment decisions.
+          </p>
+        </div>
+
+        <!-- Grid item -->
+        <!-- 11th link: linkedin internship project -->
+        <div class="col-lg-4 col-md-6 grid-item mb-4 ML">
+          <img class="img-fluid w-100 mb-3 img-thumbnail shadow-sm rounded-0" src="img/portfolio/thumbnails/ClosedJobDetection.jpg" alt="">
+          <h2 class="h4"><a href="https://github.com/lizirene/310-groupp">AI-based Model for Closed Job Detection</a></h2>
+          <p class="small text-muted font-italic">
+            LinkedIn internship: AI-based model to differentiate closed jobs from open jobs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Guilty Pleasure Section -->
   <section class="min-padding-top bg-white" id="guilty-pleasure">
     <div class="container">
       <div class="row">
@@ -489,43 +495,62 @@
         </div>
         <div class="col-12 col-lg-8">
           <h5>developing:)</h5>
-          </div>
         </div>
       </div>
     </div>
+    </div>
   </section>
+
+  <script>
+    $(function () {
+
+      // Initate masonry grid
+      var $grid = $('.gallery-wrapper').masonry({
+        temSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true,
+      });
+
+      // Initate imagesLoaded
+      $grid.imagesLoaded().progress( function() {
+        $grid.masonry('layout');
+      });
+
+    });
+  </script>
 
 
   <!--  THIS IS THE FOOTER - displays a copyright notice and
         that Bootstrap powers this web page. -->
- 
-  <div class="container">
-    <p class="text-center text-muted text-small mb-1">
-      Zixuan Li &copy; 2021. All rights reserved.
-      Powered by <a href="http://www.getbootstrap.com/">Bootstrap</a>.
-    </p>
-    <p class="text-center text-muted text-small">
-      Source on <a href="https://github.com/JasonD94/jasond94.github.io">GitHub</a>.
-      Theme based on the
-      <a href="http://startbootstrap.com/template-overviews/creative/">Creative Bootstrap Theme</a>
-      by <a href="http://startbootstrap.com/">Start Bootstrap</a>.
-    </p>
-  </div>
+  <section class="min-padding-top bg-light">
+    <div class="container">
+      <p class="text-center text-muted text-small mb-1">
+        Zixuan Li &copy; 2021. All rights reserved.
+        Powered by <a href="http://www.getbootstrap.com/">Bootstrap</a>.
+      </p>
+      <p class="text-center text-muted text-small">
+        Source on <a href="https://github.com/JasonD94/jasond94.github.io">GitHub</a>.
+        Theme based on the
+        <a href="http://startbootstrap.com/template-overviews/creative/">Creative Bootstrap Theme</a>
+        by <a href="http://startbootstrap.com/">Start Bootstrap</a>.
+      </p>
+    </div>
+  </section>
 
   <!-- jQuery 3.3.1 -->
-<!--   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+  <!-- grid-item filter -->
   <script type="text/javascript">
   jQuery(function ($){
-	  var grid = $('.grid').isotope({
+	  var grid = $('.gallery-wrapper').isotope({
 		  // set itemSelector so .grid-sizer is not used in layout
 		  itemSelector: '.grid-item',
-		  layoutMode:'fitRows',
+		  // layoutMode:'fitRows',
 		  percentPosition: true,
-		  masonry: {
-		    // use element for option
-		    columnWidth: 50,
-		    gutter: 10
-		  }
+		  // masonry: {
+		  //   // use element for option
+		  //   columnWidth: 50,
+		  //   gutter: 10
+		  // }
 		 });
 
 		  //filter items on button clicks
@@ -534,8 +559,6 @@
 			  grid.isotope({filter:filterValue});
 		  });
   });
-  
-  
  </script>
   <!-- Bootstrap 4.1 JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
