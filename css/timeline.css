@@ -20,13 +20,7 @@ body{
     padding: 50px 0;
     position: relative;
 }
-.timeline-nodes {
-        padding-bottom: 25px;
-        position: relative;
-    }
-.timeline-nodes:nth-child(even) {
-    flex-direction: row-reverse;
-}
+
 .timeline h3 {
     padding: 15px 15px;
 }
@@ -34,14 +28,7 @@ body{
 	padding-left:15px;
 	padding-right:15px;
 }
-.timeline h3{
-    font-weight: lighter;
-    color:white;
-    background: var(--blue);
-}
-.timeline time {
-    color: var(--blue)
-}
+
 .timeline ul{
 	color:#808080;
 	margin-left:5px;
@@ -65,61 +52,8 @@ body{
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0px 3px 25px 0px rgba(10, 55, 90, 0.2);
 }
-.timeline-nodes:nth-child(odd) h3,
-.timeline-nodes:nth-child(odd) p {
-    text-align: left;
-}
-.timeline-nodes:nth-child(odd) .timeline-date {
-    text-align: left;
-}
-
-.timeline-nodes:nth-child(even) .timeline-date {
-    text-align: right;
-}
-.timeline-nodes:nth-child(odd) .timeline-content::after {
-    content: "";
-    position: absolute;
-    top: 5%;
-    left: 100%;
-    width: 0;
-    border-left: 10px solid var(--blue);
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-}
-.timeline-nodes:nth-child(even) .timeline-content::after {
-    content: "";
-    position: absolute;
-    top: 5%;
-    right: 100%;
-    width: 0;
-    border-right: 10px solid var(--blue);
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-}
-.timeline-image {
-    position: relative;
-    z-index: 100;
-}
-.timeline-image::before {
-    content: "";
-    width: 80px;
-    height: 80px;
-    border: 2px dashed var(--blue);
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: #fff;
-    z-index: 1;
 
 
-}
-.timeline-image img {
-    position: relative;
-    z-index: 100;
-}
 /*small device style*/
 
 @media (max-width: 767px) {
@@ -127,62 +61,14 @@ body{
     .timeline-nodes:nth-child(odd) p {
     text-align: left
 }
-.timeline-nodes:nth-child(even) {
-    flex-direction: row;
-}
-    .timeline::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 4%;
-    width: 0;
-    border-left: 2px dashed var(--blue);
-    height: 100%;
-    z-index: 1;
-    transform: translateX(-50%);
-}
+
 .timeline h3 {
     font-size: 1.7rem;
 }
 .timeline p {
     font-size: 14px;
 }
-.timeline-image {
-    position: absolute;
-    left: 0%;
-    top: 60px;
-    /*transform: translateX(-50%;);*/
-}
-.timeline-nodes:nth-child(odd) .timeline-content::after {
-    content: "";
-    position: absolute;
-    top: 5%;
-    left: auto;
-    right: 100%;
-    width: 0;
-    border-left: 0;
-    border-right: 10px solid var(--blue);
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-}
-.timeline-nodes:nth-child(even) .timeline-content::after {
-    content: "";
-    position: absolute;
-    top: 5%;
-    right: 100%;
-    width: 0;
-    border-right: 10px solid var(--blue);
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-}
-.timeline-nodes:nth-child(even) .timeline-date {
-    text-align: left;
-}
-.timeline-image::before {
-    width: 65px;
-    height: 65px;
-}
+
 }
 
 /*extra small device style */
@@ -194,17 +80,73 @@ body{
     top: 0;
     left: 3%;
 }
-.timeline-image {
+}
+
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+/* Timeline holder */
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+/* Timeline vertical line */
+ul.timeline:before {
+    content: ' ';
+    background: #fff;
+    display: inline-block;
     position: absolute;
-    left: -5%;
-    }
-.timeline-image::before {
-    width: 60px;
-    height: 60px;
-}
+    left: 16px;
+    width: 4px;
+    height: 100%;
+    z-index: 400;
+    border-radius: 1rem;
 }
 
+li.timeline-item {
+    margin: 20px 0;
+}
 
+li.timeline-item h2 {
+    color: var(--blue);
+}
+
+li.timeline-item span {
+    color:#808080;
+}
+
+/* Timeline item arrow */
+.timeline-arrow {
+    border-top: 0.5rem solid transparent;
+    border-right: 0.5rem solid #fff;
+    border-bottom: 0.5rem solid transparent;
+    display: block;
+    position: absolute;
+    left: 2rem;
+}
+
+/* Timeline item circle marker */
+li.timeline-item::before {
+    content: ' ';
+    background: var(--blue);
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    left: 11px;
+    width: 14px;
+    height: 14px;
+    z-index: 400;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
 
 
 
